@@ -19,4 +19,4 @@ def test_open_browser(browser_config):
 def test_negative(browser_config):
     browser.open('https://www.google.com/')
     browser.element('[name="q"]').type('ahuegfuyegf87f').press_enter()
-    browser.element('[id="search"]').should(have.text('Selene - User-oriented Web UI browser tests in Python'))
+    browser.element('[id="search"]').should(have.text('did not match any documents'))
