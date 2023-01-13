@@ -1,8 +1,10 @@
+from selene import have
 from selene.support.shared import browser
 import os
 
 
 def test_filling_form_personal_data():
+    browser.open('automation-practice-form')
     browser.element('#firstName').type('Alex')
     browser.element('#lastName').type('Po')
     browser.element('#userEmail').type('alexpo@email.com')
@@ -20,3 +22,16 @@ def test_filling_form_personal_data():
     browser.element('#react-select-3-input').type('NCR').press_enter()
     browser.element('#react-select-4-input').type('Delhi').press_enter()
     browser.element('#submit').press_enter()
+    browser.all('.table-responsive td:nth-child(2)').should(have.texts(
+        'Alex Po',
+        'alexpo@email.com',
+        'Male',
+        '1111111111',
+        '09 October,1991',
+        'Maths',
+        'Sports',
+        '5120x2160.png',
+        'NY',
+        'NCR Delhi'
+    )
+    )
