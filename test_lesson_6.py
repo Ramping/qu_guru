@@ -3,10 +3,8 @@ import os
 from io import TextIOWrapper
 from os.path import basename
 from zipfile import ZipFile
-
 from openpyxl.reader.excel import load_workbook
 from pypdf import PdfReader
-import pytest
 
 files_dir = os.path.abspath('files')
 resources_path = os.path.abspath('resources')
@@ -14,6 +12,7 @@ zip_path = os.path.join(resources_path, 'new_archive.zip')
 
 
 def test_create_archive():
+    os.mkdir(resources_path)
     with ZipFile(zip_path, "w") as zip_file:
         for file in os.listdir(files_dir):
             add_file = os.path.join(files_dir, file)
@@ -51,8 +50,4 @@ def test_csv():
     assert "booker12 9012 Rachel Booker" in list_csv, 'information in csv file not found'
     zf.close()
     os.remove(os.path.join(resources_path, 'new_archive.zip'))
-
-
-@pytest.fixture()
-def clear_dir():
-    os.remove(os.path.join(resources_path, 'new_archive.zip'))
+    os.rmdir(resources_path)
