@@ -44,7 +44,7 @@ def test_dynamic_steps():
     with allure.step('Open the Issues tab'):
         s('#issues-tab').click()
     with allure.step('Checking for Issue number 1'):
-        s(by.partial_text('#76')).should(be.visible)
+        s(by.partial_text('#1')).should(be.visible)
 
 
 @allure.tag('web')
