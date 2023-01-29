@@ -1,7 +1,7 @@
-from collections.abc import Iterable
-
-from model.base_methods import field_filling, click_on_element, selection_from_list, send_key, element, checking_elements
-from model.path_generator import images
+from demoqa_tests.base_methods import field_filling, click_on_element, send_key, element, checking_elements
+from demoqa_tests.model.controls.dropdown import dropdown
+from demoqa_tests.model.controls.datepicker import datepicker
+from demoqa_tests.utils.path_generator import images
 
 
 def first_name(value):
@@ -24,15 +24,19 @@ def number(value):
     field_filling('#userNumber', value)
 
 
-def birthday(month, year):
-    click_on_element('#dateOfBirthInput')
-    field_filling('.react-datepicker__month-select', month)
-    field_filling('.react-datepicker__year-select', year)
-    click_on_element('.react-datepicker__day--009')
-
-
 def subjects(value):
-    selection_from_list('#subjectsInput', value)
+    dropdown('#subjectsInput', value)
+
+
+def birthday(month, year):
+    datepicker(
+        '#dateOfBirthInput',
+        '.react-datepicker__month-select',
+        '.react-datepicker__year-select',
+        '.react-datepicker__day--009',
+        month,
+        year
+    )
 
 
 def hobbies():
@@ -48,11 +52,11 @@ def address(value):
 
 
 def country(value):
-    selection_from_list('#react-select-3-input', value)
+    dropdown('#react-select-3-input', value)
 
 
 def city(value):
-    selection_from_list('#react-select-4-input', value)
+    dropdown('#react-select-4-input', value)
 
 
 def submit():

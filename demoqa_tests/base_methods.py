@@ -14,10 +14,6 @@ def click_on_element(locator):
     element(locator).click()
 
 
-def selection_from_list(locator, value):
-    element(locator).type(value).press_enter()
-
-
 def send_key(locator, value):
     element(locator).send_keys(value)
 

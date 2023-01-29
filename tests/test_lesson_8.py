@@ -1,8 +1,8 @@
 import pytest
-from selene import have
 from selene.support.shared import browser
-import os
-from model import practice_form as pf
+
+import demoqa_tests.model.controls.datepicker
+from demoqa_tests.model.pages import practice_form as pf
 
 
 @pytest.mark.parametrize('url', ['automation-practice-form'])
