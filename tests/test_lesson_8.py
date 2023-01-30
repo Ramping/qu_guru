@@ -1,7 +1,5 @@
 import pytest
 from selene.support.shared import browser
-
-import demoqa_tests.model.controls.datepicker
 from demoqa_tests.model.pages import practice_form as pf
 
 
