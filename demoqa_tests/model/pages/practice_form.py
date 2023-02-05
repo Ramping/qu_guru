@@ -70,3 +70,22 @@ class PracticePage:
     def check_end_form(self, *value):
         self.bf.checking_elements('.table-responsive td:nth-child(2)', *value)
         return self
+
+    def fill(self, student):
+        self.first_name(student).last_name(student).email(student).gender(student)\
+        .phone(student).birthday(student).subjects(student).hobbies(student)\
+        .address(student).country(student).city(student).insert_image(student).submit()
+
+    def check_results(self, student):
+        self.check_end_form(
+            f'{student.first_name} {student.last_name}',
+            student.email,
+            student.gender.name,
+            student.phone,
+            f'{student.birthday[0]} {student.birthday[1]},{student.birthday[2]}',
+            student.subject,
+            student.hobby[0].name,
+            student.image,
+            student.address,
+            f'{student.state} {student.city}'
+        )
