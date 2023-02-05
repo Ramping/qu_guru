@@ -1,5 +1,7 @@
-from demoqa_tests.base_methods import element
+from demoqa_tests.base_methods import BaseMethods
+
+bf = BaseMethods()
 
 
 def dropdown(locator, value):
-    element(locator).type(value).press_enter()
+    bf.element(locator).type(value).press_enter()

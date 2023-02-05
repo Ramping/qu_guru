@@ -2,21 +2,22 @@ from selene import have
 from selene.support.shared import browser
 
 
-def element(locator):
-    return browser.element(locator)
+class BaseMethods:
 
+    def __init__(self):
+        self.browser = browser
 
-def field_filling(locator, value):
-    element(locator).type(value)
+    def element(self, locator):
+        return self.browser.element(locator)
 
+    def field_filling(self, locator, value):
+        self.element(locator).type(value)
 
-def click_on_element(locator):
-    element(locator).click()
+    def click_on_element(self, locator):
+        self.element(locator).click()
 
+    def send_key(self, locator, value):
+        self.element(locator).send_keys(value)
 
-def send_key(locator, value):
-    element(locator).send_keys(value)
-
-
-def checking_elements(selector, *value):
-    browser.all(selector).should(have.texts(*value))
+    def checking_elements(self, selector, *value):
+        self.browser.all(selector).should(have.texts(*value))
