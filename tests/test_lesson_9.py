@@ -1,3 +1,4 @@
+import allure
 import pytest
 from selene.support.shared import browser
 from demoqa_tests.model.pages.practice_form import PracticePage
@@ -21,6 +22,9 @@ def test_filling_form_personal_data(url):
         state='NCR',
         city='Delhi'
     )
-    browser.open(url)
-    pp.fill(student_alex)
-    pp.check_results(student_alex)
+    with allure.step('Open registration form'):
+        browser.open(url)
+    with allure.step('Fill registration form'):
+        pp.fill(student_alex)
+    with allure.step('Check results registration form'):
+        pp.check_results(student_alex)
