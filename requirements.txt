@@ -1,4 +1,4 @@
-selene == 2.0.0b16
-pytest == 7.2.0
-pypdf == 3.2.1
-openpyxl == 3.0.10
+selene~=2.0.0b16
+pytest~=7.2.0
+allure-pytest~=2.12.0
+allure-python-commons~=2.12.0
