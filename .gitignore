@@ -85,6 +85,7 @@ ipython_config.py
 # pyenv
 .python-version
 /allure-results
+/tests/allure-results
 # pipenv
 #   According to pypa/pipenv#598, it is recommended to include Pipfile.lock in version control.
 #   However, in case of collaboration, if having platform-specific dependencies or dependencies
