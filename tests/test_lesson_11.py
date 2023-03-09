@@ -34,6 +34,6 @@ def test_mobile(browser_chrome, width, height):
     if width == 1920:
         pytest.skip("Mobile")
     browser.driver.set_window_size(width, height)
-    browser.element('.js-details-target.Button--link"]').click()
+    browser.element('.js-details-target.Button--link').click()
     browser.element('a[href="/login"]').click()
     browser.element('.auth-form-header').should(have.text("Sign in to GitHub"))

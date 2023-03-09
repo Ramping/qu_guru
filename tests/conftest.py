@@ -10,7 +10,7 @@ def browser_open(request):
     else:
         browser.config.window_width = int(request.param.split('x')[0])
         browser.config.window_height = int(request.param.split('x')[1])
-        browser.open('https://github.com')
+    browser.open('https://github.com')
 
 
 @pytest.fixture()
