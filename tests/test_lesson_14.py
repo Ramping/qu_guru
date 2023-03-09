@@ -39,7 +39,7 @@ def test_delete_user():
 
 
 def test_successful_register():
-    user_register = requests.post(f"{base_url}api/register", {"email": "1234@gmail.com", "password": "1234"})
+    user_register = requests.post(f"{base_url}api/register", {"email": "eve.holt@reqres.in", "password": "1234"})
 
     assert user_register.status_code == 200
     assert S(register_user) == user_register.json()
