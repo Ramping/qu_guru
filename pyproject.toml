@@ -1,3 +1,24 @@
+[tool.poetry]
+name = "qu-guru"
+version = "0.1.0"
+description = ""
+authors = ["Alexandr Popov <harvard33rus@gmail.com>"]
+readme = "README.md"
+packages = [{include = "qu_guru"}]
+
+[tool.poetry.dependencies]
+python = "^3.10"
+pytest = "^7.2.1"
+selene = "2.0.0b17"
+
+
+[tool.poetry.group.dev.dependencies]
+pylint = "^2.16.2"
+
+[build-system]
+requires = ["poetry-core"]
+build-backend = "poetry.core.masonry.api"
+
 [tool.pytest.ini_options]
-addopts=" --durations=10 -l -vv "
+addopts=" --durations=10 -l -vv --alluredir=allure-results"
 markers=["slow: only slow tests", "fast"]
