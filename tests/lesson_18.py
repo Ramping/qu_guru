@@ -5,7 +5,7 @@ from selene import have
 def test_auth(app):
     app.open("")
     with allure.step('Check authentification'):
-        app.element(".account").should(have.text("vgtrk520@yandex.ru"))
+        app.element(".account").should(have.text("alexpo@gmail.com"))
 
 
 def test_delete_product_from_wishlist(demoshop, app):
